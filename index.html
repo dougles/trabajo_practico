@@ -1,0 +1,431 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3plus/1.9.2/d3plus.full.min.js"></script>
+</head>
+
+<header>
+  <div class="container">
+    <h1>Características que influyen al Accidente Cerebrovascular</h1>
+    <p>
+      <small>
+        <em>Visualización de Datos</em> | Fecha: <em>03/05/2023</em></small
+      >
+    </p>
+  </div>
+</header>
+<main>
+  <article class="container">
+    <p><b>Nombre:</b> Mauricio Dougles Pereira Torrez</p>
+    <p><b>URL:</b> Mauricio Dougles Pereira Torrez</p>
+    <p><b>Fuente:</b> <a href=""> Mauricio Dougles Pereira Torrez</a></p>
+    <p><b>Fecha:</b> 3 de Mayo de 2023</p>
+
+    <h2>Introducción</h2>
+    <p>
+      Según la Organización Mundial de la Salud (OMS), el accidente
+      cerebrovascular es la segunda causa de muerte en todo el mundo,
+      responsable de aproximadamente el 11% del total de muertes.
+    </p>
+    <p>
+      Un accidente cerebrovascular es causado por una arteria en el cerebro que
+      se rompe o se obstruye, privando al cerebro de sangre rica en oxígeno.
+      Cuando una arteria en el cerebro está obstruida por un coágulo de sangre,
+      se denomina accidente cerebrovascular isquémico. Una arteria rota en el
+      cerebro se conoce como accidente cerebrovascular hemorrágico o aneurisma
+      cerebral.
+    </p>
+
+    <h3>Información sobre el Dataset</h3>
+    <p>
+      Los datos fueron obtenidos de Kaggle, es la plataforma de Data Science más
+      grande del mundo
+    </p>
+    <p>
+      Este conjunto de datos se utiliza para predecir si es probable que un
+      paciente sufra un accidente cerebrovascular en función de los parámetros
+      de entrada como el sexo, la edad, diversas enfermedades y el tabaquismo.
+    </p>
+
+    <p>
+      El dataset está en idioma inglés, los datos contienen 11 características
+      clínicas influyentes que pueden provocar un accidente cardio vascular.
+    </p>
+
+    <p>
+      Referencia:
+      <a
+        href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset"
+      >
+        https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset</a
+      >
+    </p>
+
+    <p>
+      <b>Características categóricas:</b> gender(género), ever_married(alguna
+      vez casado), work_type(tipo de trabajo), Residence_type(tipo de
+      residencia), smoking_status (estado de fumador)
+    </p>
+    <p>
+      <b>Caracteristicas numéricas binarias:</b> hypertension (hipertensión),
+      heart_disease (enfermedad cardíaca), stroke (accidente cerebrovascular)
+    </p>
+    <p>
+      <b>Características numéricas continuas: </b> age(edad), avg_glucose_level
+      (promedio de nivel de glucosa):, bmi (indice de masa corporal)
+    </p>
+
+    <p>Descripción de las Características</p>
+
+    <p><b>id:</b> Identificador único</p>
+    <p>
+      <b>gender:</b> Género "Masculino", "Femenino" u "Otro" en el dataset se
+      tiene los valores de "Male", "Female" or "Other".
+    </p>
+    <p><b>age:</b> edad del paciente.</p>
+    <p>
+      <b>hypertension:</b> 0 si el paciente no tiene hipertensión, 1 si el
+      paciente tiene hipertensión.
+    </p>
+    <p>
+      <b>heart_disease:</b> 0 si el paciente no tiene ninguna enfermedad del
+      corazón, 1 si el paciente tiene una enfermedad del corazón.
+    </p>
+    <p><b>ever_married:</b> SI el paciente se casó o no "No" o "Sí"</p>
+    <p>
+      <b>work_type:</b> Se refiere al estado laboral si es niño, tiene trabajo,
+      nunca trabajo, actividades privadas, o autoempleado. en el dataset los
+      valores en inglés son: "children", "Govt_jov", "Never_worked", "Private" o
+      "Self-employment".
+    </p>
+    <p>
+      <b>residence_type:</b> Si pertenece al área Rural o Urbana, valores:
+      "Rural" o "Urban".
+    </p>
+    <p><b>avg_glucose_level:</b> Nivel promedio de glucosa en sangre.</p>
+    <p><b>bmi:</b> Índice de masa corporal</p>
+    <p>
+      <b>smoking_status:</b> Condición del paciente respecto al cigarrillo,
+      anteriormente fumó, nunca fumó, fuma o Desconocido, los valores en el
+      dataset son, "formerly smoked", "never smoked", "smokes" or "Unknown"*
+    </p>
+    <p>
+      <b>stroke:</b> 1 si el paciente tuvo un accidente cerebro vascular o 0 en
+      caso contrario
+    </p>
+
+    <h3>Objetivos</h3>
+    <p>
+      Visualizar las relaciones entre varios hábitos saludables y no saludables
+      como fumar, Edad de los pacientes, condición física, si tienen problemas
+      relacionados con el corazón y mostrar con diferentes tipos de gráficos las
+      relaciones con los accidentes cerebrovasculares.
+    </p>
+
+    <ul>
+      <li>
+        ¿La edad influye en los accidentes cerebrovasculares? y ¿Cómo se
+        distribuye este parámetro?
+      </li>
+      <li>
+        ¿El índice de masa corporal y los niveles de glucosa en una persona
+        provocan un derrame cerebral?
+      </li>
+      <li>¿Fumar puede inducir un accidente cerebrovascular?</li>
+      <li>
+        ¿El corazón con una enfermedad cardíaca es propenso a sufrir un
+        accidente cerebrovascular?
+      </li>
+      <li>
+        ¿La carga de trabajo da como resultado presión arterial alta y eso
+        podría provocar un accidente cerebrovascular ?
+      </li>
+      <li>
+        ¿Los hombres son más susceptibles a los accidentes cerebrovasculares
+        debido al alto estrés relacionado con el trabajo?
+      </li>
+    </ul>
+    <h3>Audiencia</h3>
+    Este analisis de de datos y visualizacón esta orientado a profesionales en
+    el area de salud y personas que tienen efermedades del corazon.
+
+    <h2>Metodología</h2>
+    <h3>Herramientas</h3>
+    <h4>Google Data Studio</h4>
+    <p>
+      Es una herramienta de informes y visualización de datos que le permite
+      conectarse a una amplia gama de fuentes de datos, en nuestro caso a Google
+      Sheet.
+    </p>
+    <p>
+      <b>Visualizaciones personalizables</b>
+      <br />
+      Google Data Studio permite crear visualizaciones personalizadas que se
+      adaptan a sus necesidades específicas. Tiene una amplia gama de tipos de
+      gráficos, incluidos gráficos de barras, gráficos de líneas y diagramas de
+      dispersión, y personalizarlos con diferentes colores, fuentes y estilos.
+    </p>
+    <p>
+      <b>Paneles interactivos</b>
+      <br />
+      Con Google Data Studio, se pueden crear paneles interactivos que permitan
+      a los usuarios explorar datos, agregar filtros, segmentaciones y
+      desgloses, En general, Google Data Studio puede ser una herramienta
+      valiosa para mostrar datos, en nuestro caso vamos a mostrar gráfico de
+      barras y de líneas respecto a los datos de accidentes cerebro vasculares.
+    </p>
+
+    <h4>Datawrapper</h4>
+    <p>
+      Es una herramienta de visualización de datos poderosa y fácil de usar que
+      puede ayudar a crear visualizaciones convincentes e informativas de su
+      conjunto de datos.
+    </p>
+    <p>
+      Interfaz fácil de usar la interfaz de Datawrapper es amigable,se peude
+      cargar rápidamente los datos, elegir un tipo de gráfico, personalizar la
+      apariencia de su gráfico y publicarlo en línea.
+    </p>
+    <p>
+      Amplia gama de tipos de gráficos: Datawrapper admite una amplia gama de
+      tipos de gráficos, incluidos gráficos de barras, gráficos de líneas,
+      diagramas de dispersión, mapas y más. Esto permite elegir el mejor tipo de
+      gráfico para los datos y su audiencia.
+    </p>
+    <p>
+      Opciones de personalización Datawrapper permite personalizar la apariencia
+      de su gráfico en una variedad de formas, incluido el cambio de colores,
+      fuentes y etiquetas.
+    </p>
+    <p>
+      Diseño receptivo los gráficos de Datawrapper están diseñados para ser
+      responsive, lo que significa que se ajustarán automáticamente para
+      adaptarse al tamaño de la pantalla en la que se visualizan. Esto los hace
+      fáciles de compartir y ver en diferentes dispositivos.
+    </p>
+    <p>
+      En general, Datawrapper es una gran herramienta para crear visualizaciones
+      de datos, especialmente si está buscando una solución fácil de usar y
+      personalizable.
+    </p>
+
+    <p></p>
+
+    <h2>Resultados</h2>
+
+    <iframe
+      width="772"
+      height="478"
+      seamless
+      frameborder="0"
+      scrolling="no"
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRqb-kfAa_eMreBT3XzTDFwIlnkOrOyio8d0-uD0chQxBmRWBiGSyicJDbKUq2N_HkJnikqjt8k92fQ/pubchart?oid=708467007&amp;format=interactive"
+    ></iframe>
+
+    <table>
+      <tr>
+        <td>
+          <iframe
+            width="580"
+            height="359"
+            seamless
+            frameborder="0"
+            scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRqb-kfAa_eMreBT3XzTDFwIlnkOrOyio8d0-uD0chQxBmRWBiGSyicJDbKUq2N_HkJnikqjt8k92fQ/pubchart?oid=1681975214&amp;format=interactive"
+          ></iframe>
+        </td>
+        <td>
+          <iframe
+            width="600"
+            height="371"
+            seamless
+            frameborder="0"
+            scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRqb-kfAa_eMreBT3XzTDFwIlnkOrOyio8d0-uD0chQxBmRWBiGSyicJDbKUq2N_HkJnikqjt8k92fQ/pubchart?oid=1202312866&amp;format=image"
+          ></iframe>
+        </td>
+      </tr>
+    </table>
+
+    <iframe
+      width="800"
+      height="700"
+      src="https://lookerstudio.google.com/embed/reporting/31426808-a401-425d-8b68-eb3641a9135b/page/DgeOD"
+      frameborder="0"
+      style="border: 0"
+      allowfullscreen
+    ></iframe>
+
+    <iframe
+      width="800"
+      height="600"
+      src="https://lookerstudio.google.com/embed/reporting/ea28d116-3649-451c-8d47-849767d82054/page/GGwOD"
+      frameborder="0"
+      style="border: 0"
+      allowfullscreen
+    ></iframe>
+
+    <iframe
+      title="IMC versus Promedio de glucosa   "
+      aria-label="Scatter Plot"
+      id="datawrapper-chart-e96AC"
+      src="https://datawrapper.dwcdn.net/e96AC/2/"
+      scrolling="no"
+      frameborder="0"
+      style="width: 0; min-width: 100% !important; border: none"
+      height="617"
+      data-external="1"
+    ></iframe>
+    <script type="text/javascript">
+      !(function () {
+        'use strict';
+        window.addEventListener('message', function (a) {
+          if (void 0 !== a.data['datawrapper-height']) {
+            var e = document.querySelectorAll('iframe');
+            for (var t in a.data['datawrapper-height'])
+              for (var r = 0; r < e.length; r++)
+                if (e[r].contentWindow === a.source) {
+                  var i = a.data['datawrapper-height'][t] + 'px';
+                  e[r].style.height = i;
+                }
+          }
+        });
+      })();
+    </script>
+
+    <iframe
+      title="Accidente Cerebrovascular, Edad vs Promedio de Glucosa"
+      aria-label="Scatter Plot"
+      id="datawrapper-chart-BnkRP"
+      src="https://datawrapper.dwcdn.net/BnkRP/1/"
+      scrolling="no"
+      frameborder="0"
+      style="width: 0; min-width: 100% !important; border: none"
+      height="509"
+      data-external="1"
+    ></iframe>
+    <script type="text/javascript">
+      !(function () {
+        'use strict';
+        window.addEventListener('message', function (a) {
+          if (void 0 !== a.data['datawrapper-height']) {
+            var e = document.querySelectorAll('iframe');
+            for (var t in a.data['datawrapper-height'])
+              for (var r = 0; r < e.length; r++)
+                if (e[r].contentWindow === a.source) {
+                  var i = a.data['datawrapper-height'][t] + 'px';
+                  e[r].style.height = i;
+                }
+          }
+        });
+      })();
+    </script>
+
+    <iframe
+      title=" Accidente Cerebrovascular, Edad vs Índice de Masa Corporal"
+      aria-label="Scatter Plot"
+      id="datawrapper-chart-20Ned"
+      src="https://datawrapper.dwcdn.net/20Ned/1/"
+      scrolling="no"
+      frameborder="0"
+      style="width: 0; min-width: 100% !important; border: none"
+      height="594"
+      data-external="1"
+    ></iframe>
+    <script type="text/javascript">
+      !(function () {
+        'use strict';
+        window.addEventListener('message', function (a) {
+          if (void 0 !== a.data['datawrapper-height']) {
+            var e = document.querySelectorAll('iframe');
+            for (var t in a.data['datawrapper-height'])
+              for (var r = 0; r < e.length; r++)
+                if (e[r].contentWindow === a.source) {
+                  var i = a.data['datawrapper-height'][t] + 'px';
+                  e[r].style.height = i;
+                }
+          }
+        });
+      })();
+    </script>
+
+    <h2>Conclusiones</h2>
+
+    <p>
+      ¿La edad influye en los accidentes cerebrovasculares? y ¿Cómo se
+      distribuye este parámetro?
+    </p>
+    <p>
+      Si es una de las características que más influyen en los pacientes que
+      sufren accidentes cardiovasculares, los gráficos muestran que a medida que
+      las personas se hacen mayores el riesgo sube riesgo, esto lo podemos
+      evidenciar en los Gráficos de dispersión de promedio de glucosa e índice
+      de Masa corporal.
+    </p>
+
+    <p>
+      ¿El índice de masa corporal y los niveles de glucosa en una persona
+      provocan un derrame cerebral?
+    </p>
+
+    <p>
+      Según el gráfico de IMC versus Promedio de glucosa, aparentemente hay más
+      casos de accidente cerebro vascular en personas que tiene glucosa elevada,
+      es decir, la relación de número de casos con accidente cerebrovascular con
+      este grupo es mayor al grupo inferior
+    </p>
+    <p>¿Fumar puede inducir un accidente cerebrovascular?</p>
+
+    <p>
+      En las gráficas de porcentajes vemos que si afecta levemente hay una
+      incidencia mayor, pero no tan relevante de las personas que fuman.
+    </p>
+
+    <p>
+      ¿El corazón con una enfermedad cardíaca es propenso a sufrir un accidente
+      cerebrovascular?
+    </p>
+    <p>
+      Si tiene las personas que padecen cardiopatías tiene un riesgo mayor a
+      padecer accidente cerebrovascular según los gráficos de porcentajes
+    </p>
+
+    <p>
+      ¿La carga de trabajo da como resultado presión arterial alta y eso podría
+      provocar un accidente cerebrovascular ?
+    </p>
+    <p>
+      No es muy claro según gráficos de porcentajes las personas que trabajan
+      por sí mismas tienen mayor riesgo a padecer un accidente cerebrovascular
+      en comparación a los otros caso, pero esta diferencia no es tan distante.
+    </p>
+    <p>
+      ¿Los hombres son más susceptibles a los accidentes cerebrovasculares
+      debido al alto estrés relacionado con el trabajo?
+    </p>
+    <p>
+      Según Las gráficas de porcentajes el riesgo esta distribuido
+      uniformemente, hombre y mujeres tienen el mismo riesgo de sufrir un
+      accidente cardiovascular.
+    </p>
+
+    <p>
+      El resultado de este análisis puede ayudar ha continuar con estudios
+      estadisticos a mayor profundidad, obtener modelos de predicción o de
+      clasificación con el uso de Machine Learning, o produndizar muestras sobre
+      las caracteristcias citadas en este trabajo.
+    </p>
+
+    <blockquote>
+      <p>
+        "Mantener el cuerpo saludable es una obligación… De lo contrario, no
+        podemos mantener nuestra mente fuerte y clara "
+      </p>
+      <footer>- <cite>(Buda).</cite></footer>
+    </blockquote>
+  </article>
+</main>
+<footer>
+  <div class="container">
+    <p>&copy; 2023 Mauricio Dougles Pereira Torrez</p>
+  </div>
+</footer>
